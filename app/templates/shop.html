@@ -11,17 +11,17 @@
       <div class="card-body">
         <h5 class="card-title">Books</h5>
         <p class="card-text">Find the perfect book for you.</p>
-        <a href="#" class="btn btn-primary">Shop Books</a>
+        <a href="{{ url_for('books.book') }}" class="btn btn-primary">Shop Books</a>
       </div>
     </div>
   </div>
   <div class="col-md-4">
     <div class="card">
-      <img src="/static/images/mine1.jpeg" class="card-img-top" alt="Authors">
+      <img src="/static/images/author1.jpeg" class="card-img-top" alt="Authors">
       <div class="card-body">
         <h5 class="card-title">Authors</h5>
         <p class="card-text">Browse from your favorite author.</p>
-        <a href="#" class="btn btn-primary btn-center">Shop from Authors</a>
+        <a href="{{ url_for('books.author') }}" class="btn btn-primary btn-center">Shop from Authors</a>
       </div>
     </div>
   </div>
