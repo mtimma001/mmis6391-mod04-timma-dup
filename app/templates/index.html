@@ -4,23 +4,52 @@
 
 {% block content %}
 <div class="jumbotron text-center">
-  <h1 class="display-4">Welcome to Pet Store</h1>
-  <p>Your one-stop shop for all pet needs!</p>
-  <a href="/shop" class="btn btn-primary btn-lg">Shop Now</a>
+  <h1 class="display-4">Welcome to Book Store</h1>
+  <p>Your one-stop shop for all book needs!</p>
+  <a href="{{ url_for('shop') }}" class="btn btn-primary btn-lg">Shop Now</a>
 </div>
 
-<div class="row mt-5">
-  <div class="col-lg-4">
-    <h3>Featured Dogs</h3>
-    <img src="/static/images/ggi-dog-home.jpeg" class="img-fluid" alt="Dogs">
+<div class="container mt-5">
+  <!-- Featured Books Section -->
+  <h2 class="text-center">Featured Books</h2>
+  <div class="row mt-4">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="{{ url_for('static', filename='images/hp1.jpeg') }}" class="card-img-top img-fluid" alt="Book One">
+        <div class="card-body">
+          <h5 class="card-title text-center">Harry Potter and the Philosopher's Stone</h5>
+<!--          <p class="card-text"><strong>Author:</strong> Author One</p>-->
+        </div>
+        <div class="card-footer text-center">
+          <a href="{{ url_for('books.book') }}" class="btn btn-primary">View Books</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="{{ url_for('static', filename='images/got1.jpeg') }}" class="card-img-top img-fluid" alt="Book Two">
+        <div class="card-body">
+          <h5 class="card-title text-center">A Game of Thrones</h5>
+<!--          <p class="card-text"><strong>Author:</strong> Author Two</p>-->
+        </div>
+        <div class="card-footer text-center">
+          <a href="{{ url_for('books.book') }}" class="btn btn-primary">View Books</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="{{ url_for('static', filename='images/mine1.jpeg') }}" class="card-img-top img-fluid" alt="Book Three">
+        <div class="card-body">
+          <h5 class="card-title text-center">Special Book</h5>
+<!--          <p class="card-text"><strong>Author:</strong> Author Three</p>-->
+        </div>
+        <div class="card-footer text-center">
+          <a href="{{ url_for('books.book') }}" class="btn btn-primary">View Books</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-lg-4">
-    <h3>Featured Cats</h3>
-    <img src="/static/images/ggi-cat-home.jpeg" class="img-fluid" alt="Cats">
-  </div>
-  <div class="col-lg-4">
-    <h3>Adoption Offers</h3>
-    <img src="/static/images/ggi-adopt-home.jpeg" class="img-fluid" alt="Adoption">
-  </div>
+
 </div>
 {% endblock %}

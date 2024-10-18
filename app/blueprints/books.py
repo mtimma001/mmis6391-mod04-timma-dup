@@ -11,7 +11,7 @@ def book():
 
     # Handle POST request to add a new book
     if request.method == 'POST':
-        title = request.form['book_title']
+        title = request.form['title']
         genre = request.form['genre']
         description = request.form['description']
         cover_image = request.form['cover_image']
@@ -36,7 +36,7 @@ def update_book(book_id):
 
     if request.method == 'POST':
         # Update the book's details
-        title = request.form['book_title']
+        title = request.form['title']
         genre = request.form['genre']
         description = request.form['description']
         cover_image = request.form['cover_image']
@@ -50,8 +50,8 @@ def update_book(book_id):
 
     # GET method: fetch book's current data for pre-populating the form
     cursor.execute('SELECT * FROM books WHERE book_id = %s', (book_id,))
-    single_book = cursor.fetchone()
-    return render_template('update_book.html', book=single_book)
+    book = cursor.fetchone()
+    return render_template('update_book.html', book=book)
 
 
 @books.route('/delete_book/<int:book_id>', methods=['POST'])
